@@ -1,0 +1,78 @@
+var _user$project$Main$printMessage = function (model) {
+	var _p0 = {ctor: '_Tuple2', _0: 'red', _1: model.name};
+	var color = _p0._0;
+	var name = _p0._1;
+	return ((!_elm_lang$core$Native_Utils.eq(model.name, '')) && model.showMessage) ? _user$project$Helper$showMessage(
+		{ctor: '_Tuple2', _0: color, _1: name}) : A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{ctor: '[]'});
+};
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p1 = msg;
+		if (_p1.ctor === 'Name') {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{name: _p1._0});
+		} else {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{showMessage: true});
+		}
+	});
+var _user$project$Main$Model = F2(
+	function (a, b) {
+		return {name: a, showMessage: b};
+	});
+var _user$project$Main$model = A2(_user$project$Main$Model, '', false);
+var _user$project$Main$ShowMessage = {ctor: 'ShowMessage'};
+var _user$project$Main$Name = function (a) {
+	return {ctor: 'Name', _0: a};
+};
+var _user$project$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$input,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$type_('text'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$placeholder('Name'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$Name),
+							_1: {ctor: '[]'}
+						}
+					}
+				},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$button,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ShowMessage),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('<3'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _user$project$Main$printMessage(model),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Main$main = _elm_lang$html$Html$beginnerProgram(
+	{model: _user$project$Main$model, view: _user$project$Main$view, update: _user$project$Main$update})();

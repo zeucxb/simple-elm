@@ -1,0 +1,39 @@
+var _user$project$Helper$msg = 'Oi, ';
+var _user$project$Helper$getMessage = function (name) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		_user$project$Helper$msg,
+		A2(_elm_lang$core$Basics_ops['++'], name, '! '));
+};
+var _user$project$Helper$showMessage = function (_p0) {
+	var _p1 = _p0;
+	var _p2 = _p1._1;
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$style(
+				{
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'color', _1: _p1._0},
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(
+				_user$project$Helper$getMessage(_p2)),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(
+					_user$project$Helper$getMessage(_p2)),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(
+						_user$project$Helper$getMessage(_p2)),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
